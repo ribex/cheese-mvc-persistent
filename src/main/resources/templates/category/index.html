@@ -8,18 +8,12 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-
-<span>Test text1</span>
-
 <ul>
     <th:block th:object="${categories}" th:each="category : ${categories}">
        <li th:text="${category.name}">Categories</li>
 
     </th:block>
 </ul>
-
-<span>Test text2</span>
-
 
 </body>
 </html>
