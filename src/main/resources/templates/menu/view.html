@@ -2,21 +2,18 @@
 <!--suppress ALL -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <body class="container">
-
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<ul>
-    <th:block th:object="${categories}" th:each="category : ${categories}">
-       <li th:text="${category.name}">Categories</li>
+<p th:unless="${cheeses.size()}">No cheeses in menu yet</p>
 
-    </th:block>
+<ul>
+    <li th:each="cheese : ${cheeses}" th:text="${cheese.name}"></li>
 </ul>
 
-<a href="/category/add">Add Category</a>
+<p><a th:href="'/menu/add-item/' + ${menuId}">Add Cheese</a></p>
 
 </body>
 </html>

@@ -2,16 +2,16 @@
 <!--suppress ALL -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <body class="container">
-
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
 <ul>
     <th:block th:object="${menus}" th:each="menu : ${menus}">
-        <li th:text="${menu.name}" th:href="*/view/menu.id">Menus</li>
+        <li>
+            <a th:text="${menu.name}" th:href="'/menu/view/' + ${menu.id}">Menus</a>
+        </li>
 
     </th:block>
 </ul>

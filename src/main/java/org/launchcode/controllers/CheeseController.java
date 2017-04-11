@@ -33,7 +33,7 @@ public class CheeseController {
     public String index(Model model) {
 
         model.addAttribute("cheeses", cheeseDao.findAll());
-        model.addAttribute("title", "My Cheeses");
+        model.addAttribute("title", "Cheese List");
 
         return "cheese/index";
     }

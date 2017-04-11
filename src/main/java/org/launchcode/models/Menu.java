@@ -11,17 +11,16 @@ import java.util.List;
 /**
  * Created by Rebecca on 4/10/2017.
  */
-@SuppressWarnings("DefaultFileTemplate")
 @Entity
 public class Menu {
-
-    @NotNull
-    @Size(min=3, max=15)
-    public String name;
 
     @Id
     @GeneratedValue
     public int id;
+
+    @NotNull
+    @Size(min=3, max=15)
+    public String name;
 
     @ManyToMany
     public List<Cheese> cheeses;
@@ -36,6 +35,9 @@ public class Menu {
         cheeses.add(item);
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -43,14 +45,6 @@ public class Menu {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public List<Cheese> getCheeses() {
